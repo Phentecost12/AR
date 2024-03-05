@@ -28,11 +28,13 @@ public class Game_Manager : MonoBehaviour
     {
         player.transform.position = checkPoint[currentCheckPointIndex].transform.position;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 
     public void CheckPoint_Reach() 
     {
         currentCheckPointIndex++;
+        Reset_Player_Position();
     }
 
     public void Register(GameObject gameObject) 

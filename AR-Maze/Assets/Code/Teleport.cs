@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    public GameObject super;
+    public GameObject xd;
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(super);
+        xd.SetActive(true);
+        Game_Manager.instance.CheckPoint_Reach();
     }
 }
