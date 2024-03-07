@@ -9,10 +9,13 @@ public class UI_Manager : MonoBehaviour
     public static UI_Manager instance { get; private set; } = null;
 
     [SerializeField] private TextMeshProUGUI scoreTXT;
-    [SerializeField] private Button exitButton;
+    [SerializeField] private GameObject infoPanel;
 
+    
     private void Awake()
     {
+        infoPanel.SetActive(false);
+
         if (instance != null) 
         {
             Destroy(gameObject);
@@ -30,5 +33,15 @@ public class UI_Manager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void InfoAppaear()
+    {
+        infoPanel.SetActive(true);    }
+
+    public void InfoDissapear()
+    {
+        infoPanel.SetActive(false);
+        //Evaluar si se debe parar la exp
     }
 }
