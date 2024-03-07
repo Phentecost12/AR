@@ -9,6 +9,7 @@ public class Game_Manager : MonoBehaviour
     public GameObject player {  get; private set; }
 
     public GameObject[] checkPoint;
+    [SerializeField] GameObject imgTarget2;
 
     private int currentCheckPointIndex = 0;
     private int points = 0;
@@ -34,6 +35,7 @@ public class Game_Manager : MonoBehaviour
     public void CheckPoint_Reach() 
     {
         currentCheckPointIndex++;
+        player.transform.parent = imgTarget2.transform;
         Reset_Player_Position();
     }
 
