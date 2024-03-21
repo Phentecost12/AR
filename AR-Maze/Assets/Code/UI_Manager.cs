@@ -10,7 +10,7 @@ public class UI_Manager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreTXT;
     [SerializeField] private GameObject infoPanel;
-
+    [SerializeField] private GameObject WinPanel;
     
     private void Awake()
     {
@@ -43,5 +43,10 @@ public class UI_Manager : MonoBehaviour
     {
         infoPanel.SetActive(false);
         //Evaluar si se debe parar la exp
+    }
+
+    public void Win_Game() 
+    {
+        WinPanel.SetActive(true);
     }
 }
